@@ -20,12 +20,12 @@ node{
         withCredentials([string(credentialsId: 'Docker_Pwd', variable: 'Docker_Hub_Pwd')]) {
           sh "docker login -u mahes05 -p ${Docker_Hub_Pwd}"
         }
-        sh 'docker push dockerhandson/java-web-app'
+        sh 'docker push mahes05/java-web-app'
      }
      
       stage('Run Docker Image In Dev Server'){
         
-        def dockerRun = ' docker run  -d -p 8080:8080 --name java-web-app dockerhandson/java-web-app'
+        def dockerRun = ' docker run  -d -p 8080:8080 --name java-web-app mahes05/java-web-app'
          
          sshagent(['DOCKER_SERVER']) {
           sh 'ssh -o StrictHostKeyChecking=no ubuntu@172.31.20.72 docker stop java-web-app || true'
