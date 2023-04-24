@@ -1,7 +1,7 @@
 node{
      
     stage('SCM Checkout'){
-        git url: 'https://github.com/MithunTechnologiesDevOps/java-web-app-docker.git',branch: 'master'
+        git url: 'https://github.com/marisankar5/java-web-app-docker.git',branch: 'master'
     }
     
     stage(" Maven Clean Package"){
@@ -29,9 +29,9 @@ node{
          
          sshagent(['DOCKER_SERVER']) {
           sh 'ssh -o StrictHostKeyChecking=no ubuntu@172.31.20.72 docker stop java-web-app || true'
-          sh 'ssh  ubuntu@172.31.20.72 docker rm java-web-app || true'
-          sh 'ssh  ubuntu@172.31.20.72 docker rmi -f  $(docker images -q) || true'
-          sh "ssh  ubuntu@172.31.20.72 ${dockerRun}"
+          sh 'ssh  ubuntu@172.31.95.232 docker rm java-web-app || true'
+          sh 'ssh  ubuntu@172.31.95.232 docker rmi -f  $(docker images -q) || true'
+          sh "ssh  ubuntu@172.31.95.232 ${dockerRun}"
        }
        
     }
