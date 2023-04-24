@@ -1,4 +1,4 @@
-FROM tomcat:11.0.18
+FROM tomcat:11
 MAINTAINER iyappankmech@gmail.com
 #CMD /bin/bash
 # Dummy text to test 
