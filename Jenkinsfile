@@ -18,7 +18,7 @@ node{
     
     stage('Push Docker Image'){
         withCredentials([string(credentialsId: 'Docker_Pwd', variable: 'Docker_Hub_Pwd')]) {
-          sh "docker login -u mahes05 -p ${Docker_Pwd}"
+          sh "docker login -u mahes05 -p ${Docker_Hub_Pwd}"
         }
         sh 'docker push dockerhandson/java-web-app'
      }
