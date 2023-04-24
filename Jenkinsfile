@@ -1,7 +1,7 @@
 node{
      
     stage('SCM Checkout'){
-        git url: 'https://github.com/marisankar5/java-web-app-docker.git',branch: 'master'
+        git url: 'https://github.com/marisankar5/java-web-app-docker.git',branch: 'main'
     }
     
     stage(" Maven Clean Package"){
